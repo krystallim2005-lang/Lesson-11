@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>&lt;model-viewer&gt; template</title>
+    <meta charset="utf-8">
+    <meta name="description" content="&lt;model-viewer&gt; template">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link type="text/css" href="./styles.css" rel="stylesheet"/>
+  </head>
+  <body>
+    <!-- <model-viewer> HTML element -->
+    <model-viewer src="model_animation.glb" ar ar-modes="scene-viewer webxr quick-look" camera-controls tone-mapping="neutral" poster="poster.png" shadow-intensity="1" animation-name="Table(8A0E5BC1-F6EE-4008-80F7-23FB37B46E3A)Action" id="gear">
+      <div class="progress-bar hide" slot="progress-bar">
+          <div class="update-bar"></div>
+      </div>
+      <button slot="ar-button" id="ar-button">
+          View in your space
+      </button>
+      <div id="ar-prompt">
+          <img src="ar_hand_prompt.png">
+      </div>
+
+<div class="controls" style="position: absolute; bottom: 0px; left: 200px"
+  <div>Animation:
+  <button id="default1Btn" onClick="Btn01()">Play Animation 01
+  </button>
+  <button id="default2Btn" onClick="Btn02()">Play Animation 02
+  </button>
+  <button id="pauseBtn" onClick="pauseAnimation()">Pause Animation
+  </button>
+  </div>
+  </div>
+
+    </model-viewer>  
+    <script src="script.js"></script>
+    <!-- Loads <model-viewer> for browsers: -->
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
+<script>
+  function Btn01()
+  {document.getElementById('gear').pause();
+  document.getElementById('gear').animationName = "Cover(674C8D53-22A1-4CE5-A2DC-FFBB304781E8)Action";
+  document.getElementById('gear').play(); }
+  function Btn02()
+  {document.getElementById('gear').pause();
+  document.getElementById('gear').animationName = "Table(8A0E5BC1-F6EE-4008-80F7-23FB37B46E3A)Action";
+  document.getElementById('gear').play(); }
+  function pauseAnimation()
+  { document.getElementById('gear').pause(); }
+  </script>
+  </body>
+</html>
